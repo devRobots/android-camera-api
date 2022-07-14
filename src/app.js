@@ -9,6 +9,8 @@ app.set("port", 4000);
 
 app.use(morgan('dev'));
 
+app.use(express.text());
+
 app.use(imagesRoutes);
 
 export default app;

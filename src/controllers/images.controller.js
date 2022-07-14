@@ -1,4 +1,4 @@
-import { getStorage, ref, uploadString, listAll } from "firebase/storage";
+import { getStorage, ref, uploadString, getDownloadURL, listAll } from "firebase/storage";
 import { app } from "../firebase.js";
 
 const parent = "images";
@@ -13,6 +13,19 @@ const getImages = async (_req, res) => {
         });
         res.json(listFiles);
     });
+}
+
+const downloadImage = async (req, res) => {
+    console.log(req.params);
+    const storage = getStorage();
+    const storageRef = ref(storage, req.params.ruta);
+    getDownloadURL(storageRef)
+        .then((url) => {
+            res.send(url);
+        })
+        .catch((error) => {
+            res.send(error);
+        });
 }
 
 const postImage = async (req, res) => {

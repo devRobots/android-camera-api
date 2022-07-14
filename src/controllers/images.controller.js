@@ -1,6 +1,5 @@
 import { getStorage, ref, uploadString, listAll } from "firebase/storage";
 import { app } from "../firebase.js";
-import fs from "fs";
 
 const parent = "images";
 

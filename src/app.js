@@ -10,7 +10,7 @@ app.set("port", process.env.PORT || 3000);
 
 app.use(morgan('dev'));
 
-app.use(express.text());
+app.use(express.text({limit: '20mb'}));
 
 app.use(imagesRoutes);
 

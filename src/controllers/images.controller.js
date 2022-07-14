@@ -23,7 +23,7 @@ const postImage = async (req, res) => {
 
         const storage = getStorage(app);
         const storageRef = ref(storage, path);
-        uploadString(storageRef, req.body, 'data_url').then((snapshot) => {
+        uploadString(storageRef, req.body, 'base64').then((snapshot) => {
             res.send(snapshot.metadata.name);
         }).catch((error) => {
             res.send(error);

@@ -4,8 +4,9 @@ import morgan from 'morgan';
 import imagesRoutes from './routes/images.routes.js';
 
 const app = express();
+app.disable('x-powered-by');
 
-app.set("port", 4000);
+app.set("port", process.env.PORT || 3000);
 
 app.use(morgan('dev'));
 

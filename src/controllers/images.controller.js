@@ -3,11 +3,11 @@ import { app } from "../firebase.js";
 
 const parent = "images";
 
-const getImages = async (req, res) => {
+const getImages = async (_req, res) => {
     const storage = getStorage(app);
     const storageRef = ref(storage, parent);
     listAll(storageRef).then((data) => {
-        var listFiles = [];
+        const listFiles = [];
         data.items.forEach((item) => {
             listFiles.push(item._location.path_)
         });

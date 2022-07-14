@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "babel-node": "babel-node --presets=@babel/preset-env",
-    "start": "npm run babel-node src/index.js"
+    "start": "npm run babel-node src/index.js",
+    "doc": "jsdoc -c jsdoc.json"
   },
   "keywords": [],
   "author": "",
@@ -15,10 +16,13 @@
     "@babel/core": "^7.18.6",
     "@babel/node": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
-    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "firebase": "^9.9.0",
+    "jsdoc": "^3.6.10",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "clean-jsdoc-theme": "^4.1.6"
   }
 }
